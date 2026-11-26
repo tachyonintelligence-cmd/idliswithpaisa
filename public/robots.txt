@@ -1,3 +1,10 @@
+# Open to all crawlers, including search and AI-assistant crawlers
+# (Googlebot, Bingbot, OAI-SearchBot, GPTBot, PerplexityBot and others).
+# To opt out of a specific crawler, add a "User-agent: <name>" + "Disallow: /" group.
+# NOTE: crawlers only read robots.txt at the host root. On GitHub Pages a project
+# site is served from /idliswithpaisa/, so this file takes effect once the site is
+# on its own domain (or the root of a *.github.io user site).
+
 User-agent: *
 Allow: /
 
