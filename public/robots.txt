@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tachyonintelligence-cmd.github.io/idliswithpaisa/sitemap.xml

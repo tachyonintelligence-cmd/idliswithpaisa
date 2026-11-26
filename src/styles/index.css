@@ -1,0 +1,214 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #050505;
+  --color-coal: #0a0a0a;
+  --color-mist: #f4f4f4;
+  /* Brand secondary grey. Only for large type and text on black: on white it
+     fails contrast at small sizes, where --color-slate is used instead. */
+  --color-ash: #858585;
+  --color-slate: #5c5c5c;
+  --color-alert: #c2410c;
+
+  --font-sans: 'Geist Variable', 'Noto Sans Kannada Variable', 'Noto Sans Devanagari Variable',
+    'Noto Sans Tamil Variable', system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: #050505;
+    color: #fff;
+  }
+  [data-theme='dark'] ::selection {
+    background: #fff;
+    color: #050505;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  button:not(:disabled),
+  [role='button'] {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4.5vw, 4rem);
+  }
+
+  /* Type scale */
+  .display {
+    font-weight: 550;
+    letter-spacing: -0.052em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+  .h-section {
+    font-size: clamp(2.6rem, 7vw, 6.5rem);
+  }
+  .lede {
+    font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+    line-height: 1.55;
+    letter-spacing: -0.011em;
+    text-wrap: pretty;
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Buttons. The leading chevron echoes the angle of the logo mark. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3rem;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, opacity 0.3s;
+  }
+  .btn svg {
+    transition: transform 0.45s var(--ease-out-expo);
+  }
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+  .btn:disabled {
+    opacity: 0.4;
+  }
+  .btn-ink {
+    background: #050505;
+    color: #fff;
+  }
+  .btn-ink:hover {
+    background: #262626;
+  }
+  .btn-line {
+    border-color: rgb(5 5 5 / 0.18);
+  }
+  .btn-line:hover {
+    border-color: #050505;
+  }
+  .btn-paper {
+    background: #fff;
+    color: #050505;
+  }
+  .btn-paper:hover {
+    background: #dedede;
+  }
+  .btn-ghost {
+    border-color: rgb(255 255 255 / 0.22);
+    color: #fff;
+  }
+  .btn-ghost:hover {
+    border-color: #fff;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0.28rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* The SVG scales down on phones, so its labels are set larger to stay legible. */
+  @media (max-width: 639px) {
+    .diagram text {
+      font-size: 13.5px;
+      letter-spacing: 0;
+    }
+  }
+
+  .scroll-x {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .scroll-x::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- motion */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+@keyframes ring-out {
+  from {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.flow-line {
+  stroke-dasharray: 4 6;
+  animation: dash 1.6s linear infinite;
+}
+.blink {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+/* Pauses looping CSS animation while its section is off screen. */
+[data-offscreen] .flow-line,
+[data-offscreen] .blink {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
