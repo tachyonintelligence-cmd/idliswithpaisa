@@ -5,13 +5,13 @@
 This is a single-page website. Sections are anchors on the home page. Product demonstrations on the site use simulated data and are not connected to live services.
 
 ## Site sections
-- [Home](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#home): Overview — AI technology and infrastructure, India
-- [Technology](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#technology): Intelligence, automation and connectivity
-- [Solutions — Voice AI](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#solutions): Voice AI designed for Indian languages, with a scripted demo
-- [Inventory intelligence](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#inventory): AI-powered inventory management (fictional demo data)
-- [Products — NFC](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#products): NFC business, review and portfolio cards; metal, acrylic, PVC; custom-branded
-- [About](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#about): Principles the company works to
-- [Contact](https://tachyonintelligence-cmd.github.io/idliswithpaisa/#contact): Enquiry form (hands off to WhatsApp), phone numbers
+- [Home](https://tachyonintelligence.si/#home): Overview — AI technology and infrastructure, India
+- [Technology](https://tachyonintelligence.si/#technology): Intelligence, automation and connectivity
+- [Solutions — Voice AI](https://tachyonintelligence.si/#solutions): Voice AI designed for Indian languages, with a scripted demo
+- [Inventory intelligence](https://tachyonintelligence.si/#inventory): AI-powered inventory management (fictional demo data)
+- [Products — NFC](https://tachyonintelligence.si/#products): NFC business, review and portfolio cards; metal, acrylic, PVC; custom-branded
+- [About](https://tachyonintelligence.si/#about): Principles the company works to
+- [Contact](https://tachyonintelligence.si/#contact): Enquiry form (hands off to WhatsApp), phone numbers
 
 ## Contact
 - Phone: +91 99010 56155, +91 98451 51666

@@ -1,6 +1,6 @@
 # Tachyon Intelligence — website
 
-Live: https://tachyonintelligence-cmd.github.io/idliswithpaisa/
+Live: https://tachyonintelligence.si/
 
 React, Vite, Tailwind CSS and Motion. Requires Node 20.19 or newer.
 
@@ -24,7 +24,7 @@ to `gh-pages`.
 |---|---|
 | Official email (currently a placeholder) | `src/config/site.js` → `email` |
 | Social profile links | `src/config/site.js` → `socials` |
-| Custom domain, if any | `index.html`, `public/robots.txt`, `public/sitemap.xml` |
+| Domain | Set to https://tachyonintelligence.si/ in `index.html`, `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt`, `public/CNAME` |
 | Contact form backend (optional) | `VITE_CONTACT_ENDPOINT`, a URL accepting a JSON POST. Without it the form hands the enquiry to WhatsApp |
 | Native-speaker review of Kannada, Hindi and Tamil lines | `src/data/voiceScripts.js`, `src/lib/intents.js`, `src/sections/Voice.jsx` |
 | Confirm product claims match what is offered today | `src/sections/` |
